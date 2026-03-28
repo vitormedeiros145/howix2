@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard de Saúde</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>📊 Monitoramento de Saúde Básica</h1>
+    </header>
+
+    <section class="dashboard">
+        <div class="card">
+            <h3>Total</h3>
+            <p id="total">0</p>
+        </div>
+        <div class="card">
+            <h3>Com Pendência</h3>
+            <p id="pendentes">0</p>
+        </div>
+        <div class="card">
+            <h3>Gestantes</h3>
+            <p id="gestantes">0</p>
+        </div>
+        <div class="card">
+            <h3>Crianças</h3>
+            <p id="criancas">0</p>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2>Cadastrar Paciente</h2>
+
+        <input type="text" id="nome" placeholder="Nome do paciente">
+
+        <select id="tipo">
+            <option value="gestante">Gestante</option>
+            <option value="crianca">Criança</option>
+        </select>
+
+        <label>
+            <input type="checkbox" id="pendencia">
+            Possui pendência
+        </label>
+
+        <button onclick="adicionarPaciente()">Adicionar</button>
+    </section>
+
+    <section class="filtros">
+        <h2>Filtros</h2>
+        <select id="filtro" onchange="filtrar()">
+            <option value="todos">Todos</option>
+            <option value="pendentes">Pendentes</option>
+            <option value="gestante">Gestantes</option>
+            <option value="crianca">Crianças</option>
+        </select>
+    </section>
+
+    <section class="tabela">
+        <h2>Pacientes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th>Status</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="lista"></tbody>
+        </table>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
